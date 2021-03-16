@@ -97,7 +97,7 @@ author:
   name             : "TEST" # "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "**TESTING** for my blog" # "I am an **amazing** person."
-  location         : Republic of Korea"Somewhere"
+  location         : Republic of Korea # "Somewhere"
   email            : w_pawn@outlook.com
   links:
     - label: "Email"
