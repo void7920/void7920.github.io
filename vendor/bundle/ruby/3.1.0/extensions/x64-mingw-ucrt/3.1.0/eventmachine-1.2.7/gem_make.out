@@ -1,0 +1,17 @@
+current directory: D:/Bak/void7920.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+D:/Dev/Ruby31-x64/bin/ruby.exe -I D:/Dev/Ruby31-x64/lib/ruby/site_ruby/3.1.0 -r ./siteconf20220112-21212-j7mac7.rb extconf.rb
+creating Makefile
+
+current directory: D:/Bak/void7920.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= clean
+
+current directory: D:/Bak/void7920.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\=
+generating fastfilereaderext-x64-mingw-ucrt.def
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: D:/Bak/void7920.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20220112-21212-wad31
