@@ -2,7 +2,7 @@
 title:  "Half Adder"
 excerpt: "Combinational Logic Half Adder"
 
-category:
+categories:
   - Combinational
 tags:
   - [FPGA, Verilog, Logic, Combinational]

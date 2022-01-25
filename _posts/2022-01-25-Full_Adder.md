@@ -2,7 +2,7 @@
 title:  "Full Adder"
 excerpt: "Combinational Logic Full Adder"
 
-category:
+categories:
   - Combinational
 tags:
   - [FPGA, Verilog, Logic, Combinational]
