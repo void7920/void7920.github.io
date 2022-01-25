@@ -25,9 +25,9 @@ last_modified_at: 2022-01-25
 
 ## Boolean Equation
 
-	A ⊕ B = S
+S = A ⊕ B
 
-	A × B = C
+C = A × B
 
 ---
 
