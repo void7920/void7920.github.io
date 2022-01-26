@@ -16,7 +16,7 @@ last_modified_at: 2022-01-25
 
 # Truth Table
 
-|  A  |  B  |  S  |  C  |
+| &nbsp; &nbsp; A &nbsp; &nbsp; | &nbsp; &nbsp; B &nbsp; &nbsp; | &nbsp; &nbsp; S &nbsp; &nbsp; | &nbsp; &nbsp; C &nbsp; &nbsp; |
 |:---:|:---:|:---:|:---:|
 |  0  |  0  |  0  |  0  |
 |  0  |  1  |  1  |  0  |

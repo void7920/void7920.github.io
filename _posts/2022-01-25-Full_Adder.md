@@ -16,7 +16,7 @@ last_modified_at: 2022-01-25
 
 # Truth Table
 
-|  A  |  B  |  C<sub>in<sub>  |  S  |  C<sub>out<sub>  |
+| &nbsp; &nbsp; A &nbsp; &nbsp; | &nbsp; &nbsp; B &nbsp; &nbsp; | &nbsp; &nbsp; C<sub>in<sub> &nbsp; &nbsp; | &nbsp; &nbsp; S &nbsp; &nbsp; | &nbsp; &nbsp; C<sub>out<sub> &nbsp; &nbsp; |
 |:---:|:---:|:---:|:---:|:---:|
 |  0  |  0  |  0  |  0  |  0   |
 |  1  |  0  |  0  |  1  |  0   |
