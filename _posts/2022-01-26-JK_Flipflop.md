@@ -14,7 +14,7 @@ date: 2022-01-26
 last_modified_at: 2022-01-26
 ---
 
-![TFF1](/images/2022-01-26-JK_FLIPFLOP/logic4.png)
+![JKFF1](/images/2022-01-26-JK_FLIPFLOP/logic4.png)
 
 # Truth Table
 
@@ -41,6 +41,8 @@ JK FF
 JK FF w. D
 ![JKFF2](/images/2022-01-26-JK_FLIPFLOP/logic2.png)
 
+JK FF Master-Slave
+![JKFF3](/images/2022-01-26-JK_FLIPFLOP/logic3.png)
 ---
 
 # Design Source
