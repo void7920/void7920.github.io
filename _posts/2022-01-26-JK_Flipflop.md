@@ -138,6 +138,34 @@ module JK_FF(
 endmodule
 ```
 
+## JK Flipflop Master-Slave
+
+```verilog
+module JK_FF_MS(
+	q,
+	q_,
+	clk,
+	pre_n,
+	clr_n,
+	j,
+	k
+	);
+	
+	output q;
+	output q_;
+	input clk;
+	input pre_n;
+	input clr_n;
+	input j;
+	input k;
+	
+	wire q1;
+	wire q1_;
+	
+	SR_Latch Master(.q(q1), .q_(q1_), .en(clk), .pre_n(pre_n), .rst_n(clr_n), .s(j & q_), .r(k & q));
+	SR_Latch Slave(.q(q), .q_(q_), .en(~clk), .pre_n(pre_n), .rst_n(clr_n), .s(q1), .r(q1_));
+endmodule
+```
 ---
 
 # Simulation Source
