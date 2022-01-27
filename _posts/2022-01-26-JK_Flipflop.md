@@ -43,6 +43,7 @@ JK FF w. D
 
 JK FF Master-Slave
 ![JKFF3](/images/2022-01-26-JK_FLIPFLOP/logic3.png)
+
 ---
 
 # Design Source
