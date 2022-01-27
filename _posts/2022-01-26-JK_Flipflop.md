@@ -45,39 +45,29 @@ JK FF w. D
 
 # Design Source
 
-## Structual modeling
+## Dataflow modeling
 
 ```verilog
 module JK_FF(
-    input j, k, clk,
-    output q, q_
+    q,
+    q_,
+    clk,
+    pre_n,
+    clr_n,
+    j,
+    k
     );
     
-    assign q = ~(q_ & ~(j & clk & q_));
-    assign q_ = ~(q & ~(k & clk & q));
-endmodule
-```
-
-## with D Flipflop
-
-```verilog
-module JK_FF(
-	q,
-	clk,
-	pre_n,
-	clr_n,
-	j,
-	k
-	);
-	
-	output q;
-	input clk;
-	input pre_n;
-	input clr_n;
-	input j;
-	input k;
-	
-	D_FF D(.q(q), .clk(clk), .pre_n(pre_n), .clr_n(clr_n), .d( ((j & ~q) | (~k & q)) ));
+    output q;
+    output q_;
+    input clk;
+    input pre_n;
+    input clr_n;
+    input j;
+    input k;
+    
+    assign q = ~(q_ & ~(j & clk & q_) & pre_n);
+    assign q_ = ~(q & ~(k & clk & q) & clr_n);
 endmodule
 ```
 
@@ -120,6 +110,31 @@ module JK_FF(
 	end
 endmodule
 ```
+
+
+## with D Flipflop
+
+```verilog
+module JK_FF(
+	q,
+	clk,
+	pre_n,
+	clr_n,
+	j,
+	k
+	);
+	
+	output q;
+	input clk;
+	input pre_n;
+	input clr_n;
+	input j;
+	input k;
+	
+	D_FF D(.q(q), .clk(clk), .pre_n(pre_n), .clr_n(clr_n), .d( ((j & ~q) | (~k & q)) ));
+endmodule
+```
+
 ---
 
 # Simulation Source

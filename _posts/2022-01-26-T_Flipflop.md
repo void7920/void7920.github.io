@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 
 date: 2022-01-26
-last_modified_at: 2022-01-26
+last_modified_at: 2022-01-27
 ---
 
 ![TFF1](/images/2022-01-26-T_FLIPFLOP/logic4.png)
@@ -29,7 +29,7 @@ last_modified_at: 2022-01-26
 
 ## Boolean Equation
 
-Q<sub>n+1</sub> = Q<sub>n</sub>'
+Q<sub>n+1</sub> = TQ<sub>n</sub>' + T'Q<sub>n</sub>
 
 ---
 
@@ -48,36 +48,23 @@ T FF w. D FF
 
 ```verilog
 module T_FF(
-    input t, clk,
-    output q, q_
+    q,
+    q_,
+    clk,
+    pre_n,
+    clr_n,
+    t
     );
     
-    assign q = ~(q_ & ~(t & clk & q_));
-    assign q_ = ~(q & ~(t & clk & q));
-endmodule
-```
-
-May not work in Testbench
-
-
-## with D Flipflop
-
-```verilog
-module T_FF(
-	q,
-	clk,
-	pre_n,
-	clr_n,
-	t
-	);
-	
-	output q;
-	input clk;
-	input pre_n;
-	input clr_n;
-	input t;
-	
-	D_FF D(.q(q), .clk(clk), .pre_n(pre_n), .clr_n(clr_n), .d(t^q));
+    output q;
+    output q_;
+    input clk;
+    input pre_n;
+    input clr_n;
+    input t;
+    
+    assign q = ~(q_ & ~(t & clk & q_) & pre_n);
+    assign q_ = ~(q & ~(t & clk & q) & clr_n);
 endmodule
 ```
 
@@ -111,6 +98,28 @@ module T_FF(
 	end
 endmodule
 ```
+
+## with D Flipflop
+
+```verilog
+module T_FF(
+	q,
+	clk,
+	pre_n,
+	clr_n,
+	t
+	);
+	
+	output q;
+	input clk;
+	input pre_n;
+	input clr_n;
+	input t;
+	
+	D_FF D(.q(q), .clk(clk), .pre_n(pre_n), .clr_n(clr_n), .d(t^q));
+endmodule
+```
+
 ---
 
 # Simulation Source

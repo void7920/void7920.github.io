@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-01-26
-last_modified_at: 2022-01-26
+last_modified_at: 2022-01-27
 ---
 
 ![DFF1](/images/2022-01-26-D_FLIPFLOP/logic3.png)
@@ -53,7 +53,25 @@ D FF master-slave
 ## Dataflow modeling
 
 ```verilog
-
+module D_FF_(
+    q,
+    q_,
+    clk,
+    pre_n,
+    clr_n,
+    d
+    );
+    
+    output q;
+    output q_;
+    input clk;
+    input pre_n;
+    input clr_n;
+    input d;
+    
+    assign q = ~(q_ & ~(d & clk) & pre_n);
+    assign q_ = ~(q & ~(~(d & d) & clk) & clr_n);
+endmodule
 ```
 
 ## Behavioral modeling
@@ -86,6 +104,33 @@ module D_FF(
 	end
 endmodule
 ```
+
+## Master-Slave modeling
+
+```verilog
+module D_FF_MS(
+    q,
+    q_,
+    clk,
+    pre_n,
+    clr_n,
+    d
+    );
+    
+    output q;
+    output q_;
+    input clk;
+    input pre_n;
+    input clr_n;
+    input d;
+    
+    wire DQ, DQ_;
+    
+    D_FF_ Master(.q(DQ), .q_(DQ_), .clk(clk), .pre_n(pre_n), .clr_n(clr_n), .d(d));
+    SR_Latch Slave(.q(q), .q_(q_), .en(~(clk&clk)), .s(DQ), .r(DQ_));
+endmodule
+```
+
 ---
 
 # Simulation Source
