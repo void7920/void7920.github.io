@@ -42,14 +42,6 @@ D FF master-slave
 
 ---
 
-# Design Source
-
-## Structual modeling
-
-```verilog
-
-```
-
 ## Dataflow modeling
 
 ```verilog
