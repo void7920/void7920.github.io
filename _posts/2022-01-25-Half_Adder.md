@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-01-25
-last_modified_at: 2022-01-25
+last_modified_at: 2022-01-31
 ---
 
 # Truth Table
@@ -43,11 +43,11 @@ C = A × B
 
 ```verilog
 module HA_Structual(
-    	C,
+    C,
 	S,
 	A,
 	B
-    	);
+    );
 
 	output C;
 	output S;
@@ -67,7 +67,7 @@ module HA_Dataflow(
 	S,
 	A,
 	B
-    	);
+    );
 
 	output C;
 	output S;
@@ -87,7 +87,7 @@ module HA_behavioral(
 	S,
 	A,
 	B
-    	);
+    );
 
 	output reg C;
 	output reg S;
