@@ -16,7 +16,7 @@ last_modified_at: 2022-02-21
 
 # Truth Table
 
-| &nbsp; &nbsp; S<sub>1<sub> &nbsp; &nbsp; | &nbsp; &nbsp; S<sub>0<sub> &nbsp; &nbsp; | &nbsp; &nbsp; Y &nbsp; &nbsp; |
+| &nbsp; &nbsp; S<sub>1</sub> &nbsp; &nbsp; | &nbsp; &nbsp; S<sub>0</sub> &nbsp; &nbsp; | &nbsp; &nbsp; Y &nbsp; &nbsp; |
 |:---:|:---:|:---:|
 |  0  |  0  |  A  |
 |  0  |  1  |  B  |
