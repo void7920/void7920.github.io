@@ -19,7 +19,7 @@ last_modified_at: 2022-02-21
 | &nbsp; &nbsp; S<sub>1<sub> &nbsp; &nbsp; | &nbsp; &nbsp; S<sub>0<sub> &nbsp; &nbsp; | &nbsp; &nbsp; Y &nbsp; &nbsp; |
 |:---:|:---:|:---:|
 |  0  |  0  |  A  |
-|  0  |  0  |  B  |
+|  0  |  1  |  B  |
 |  1  |  0  |  C  |
 |  1  |  1  |  D  |
 

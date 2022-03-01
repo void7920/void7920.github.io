@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 
 date: 2022-02-21
-last_modified_at: 2022-02-21a
+last_modified_at: 2022-02-21
 ---
 
 # Logic
