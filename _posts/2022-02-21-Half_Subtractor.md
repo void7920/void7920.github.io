@@ -156,5 +156,3 @@ endmodule
 # Simulation data
 
 // ![Tb_HS](/images/2022-02-21-HS/tb.png)
-
-# Simulation data
