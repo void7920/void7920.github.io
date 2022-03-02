@@ -26,6 +26,7 @@ last_modified_at: 2022-02-21
 ## Boolean Equation
 
 D = A ⊕ B
+
 Br = A' × B
 
 ---

@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-02-21
-last_modified_at: 2022-02-21
+last_modified_at: 2022-03-01
 ---
 
 # Truth Table
@@ -29,10 +29,9 @@ last_modified_at: 2022-02-21
 
 ## Boolean Equation
 
-S = A ⊕ B ⊕ C<sub>in</sub>
+D = A ⊕ Br ⊕ Br<sub>in</sub> 
 
-C<sub>out</sub> = A × B + C<sub>in</sub>(A ⊕ B)
-
+Br = B<sub>in</sub> (A ⊕ B)' + A'B
 ---
 
 # Logic
