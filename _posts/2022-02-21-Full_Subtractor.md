@@ -32,11 +32,12 @@ last_modified_at: 2022-03-01
 D = A ⊕ Br ⊕ Br<sub>in</sub> 
 
 Br = B<sub>in</sub> (A ⊕ B)' + A'B
+
 ---
 
 # Logic
 
-![FS](/images/2022-01-25-FS/logic.png)
+![FS](/images/2022-02-21-FS/logic.png)
 
 ---
 
@@ -45,122 +46,115 @@ Br = B<sub>in</sub> (A ⊕ B)' + A'B
 ## Structual modeling
 
 ```verilog
-module FA_Structural(
-	C_out,
-	S,
-	A,
-	B,
-	C_in
-	);
-
-	output C_out, 
-	output S;
-	input A; 
-	input B;
-	input C_in;
-
-	wire w1, w2, w3;
-
-	xor(w1, A, B);
-	and(w2, T1, C_in);
-	and(w3, A, B);
-	
-	xor(S, A, B, C_in);
-	or(C_out, w2, w3);	
+module Full_Subtractor_Structural(
+    br_out,     // borrow out
+    d,          // difference
+    a,          // a
+    b,          // b
+    br_in       // borrow in
+    );
+   
+    output br_out;
+    output d;
+    input a;
+    input b;
+    input br_in;
+        
+    wire w1, w2, w3;
+    
+    xor(w1, a, b);
+    and(w2, ~w1, br_in);
+    and(w3, ~a, b);
+    
+    xor(d, a, b, br_in);
+    or(br_out, w2, w3);
 endmodule
 ```
 
 ## Dataflow modeling
 
 ```verilog
-module FA_Dataflow(
-	C_out,
-	S,
-	A,
-	B,
-	C_in
-	);
-
-	output C_out, 
-	output S;
-	input A; 
-	input B;
-	input C_in;
-
-	assign S = (A ^ B ^ C_in);
-	assign C_out = (A&B) | ((A^B) & C_in);
+module Full_Subtractor_Dataflow(
+    br_out,     // borrow out
+    d,          // difference
+    a,          // a
+    b,          // b
+    br_in       // borrow in
+    );
+   
+    output br_out;
+    output d;
+    input a;
+    input b;
+    input br_in;
+    
+    assign d = (a ^ b ^ br_in);
+    assign br_out = (~a & b) | (~(a ^ b) & br_in);
 endmodule
 ```
 
 ## Behavioral modeling
 
 ```verilog
-module FA_behavioral(
-	C_out,
-	S,
-	A,
-	B,
-	C_in
-	);
-
-	output reg C_out, 
-	output reg S;
-	input A; 
-	input B;
-	input C_in;
-
-	always@(A, B, C_in)
-	begin
-		case({C_in, B, A})
-			3'b000:
-			begin
-				S = 1'b0;
-				C = 1'b0;
-			end
-
-			3'b001:
-			begin
-				S = 1'b1;
-				C = 1'b0;
-			end
-
-			3'b010:
-			begin
-				S = 1'b1;
-				C = 1'b0;
-			end
-
-			3'b011:
-			begin
-				S = 1'b0;
-				C = 1'b1;
-			end
-			
-			3'b100:
-			begin
-				S = 1'b1;
-				C = 1'b0;
-			end
-
-			3'b101:
-			begin
-				S = 1'b0;
-				C = 1'b1;
-			end
-
-			3'b110:
-			begin
-				S = 1'b0;
-				C = 1'b1;
-			end
-
-			3'b111:
-			begin
-				S = 1'b1;
-				C = 1'b1;
-			end
-		endcase
-	end
+module Full_Subtractor_Behavioral(
+    br_out,     // borrow out
+    d,          // difference
+    a,          // a
+    b,          // b
+    br_in       // borrow in
+    );
+   
+    output reg br_out;
+    output reg d;
+    input a;
+    input b;
+    input br_in;
+    
+    always@(*)
+    begin
+        case({a, b, br_in})
+            3'b000:
+                begin
+                    d = 1'b0;
+                    br_out = 1'b0;
+                end
+            3'b001:
+                begin
+                    d = 1'b1;
+                    br_out = 1'b1;
+                end
+            3'b010:
+                begin
+                    d = 1'b1;
+                    br_out = 1'b1;
+                end
+            3'b011:
+                begin
+                    d = 1'b0;
+                    br_out =1'b1;
+                end 
+            3'b100:
+                begin
+                    d = 1'b1;
+                    br_out = 1'b0;
+                end
+            3'b101:
+                begin
+                    d = 1'b0;
+                    br_out = 1'b0;
+                end
+            3'b110:
+                begin
+                    d = 1'b0;
+                    br_out = 1'b0;
+                end
+            3'b111:
+                begin
+                    d = 1'b1;
+                    br_out = 1'b1;
+                end
+        endcase
+    end
 endmodule
 ```
 ---
@@ -200,4 +194,4 @@ endmodule
 
 # Simulation data
 
-![Tb_FS](/images/2022-01-25-FS/tb.png)
+![Tb_FS](/images/2022-02-21-FS/tb.png)

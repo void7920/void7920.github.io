@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-01-25
-last_modified_at: 2022-01-25
+last_modified_at: 2022-03-02
 ---
 
 # Truth Table
@@ -45,7 +45,7 @@ C<sub>out</sub> = A × B + C<sub>in</sub>(A ⊕ B)
 ## Structual modeling
 
 ```verilog
-module FA_Structural(
+module Full_Adder_Structural(
 	C_out,
 	S,
 	A,
@@ -73,7 +73,7 @@ endmodule
 ## Dataflow modeling
 
 ```verilog
-module FA_Dataflow(
+module Full_Adder_Dataflow(
 	C_out,
 	S,
 	A,
@@ -95,7 +95,7 @@ endmodule
 ## Behavioral modeling
 
 ```verilog
-module FA_behavioral(
+module Full_Adder_behavioral(
 	C_out,
 	S,
 	A,
@@ -103,7 +103,7 @@ module FA_behavioral(
 	C_in
 	);
 
-	output reg C_out, 
+	output reg C_out;
 	output reg S;
 	input A; 
 	input B;
@@ -173,9 +173,9 @@ module Tb_FA();
 	wire C, S;
 	
 
-	FA_Structural sim_FA( C, S, A, B, C_in );
-//	FA_Dataflow sim_FA( C, S, A, B, C_in );
-//	FA_behavioral sim_FA( C, S, A, B, C_in );
+	Full_Adder_Structural sim_FA( C, S, A, B, C_in );
+//	Full_Adder_Dataflow sim_FA( C, S, A, B, C_in );
+//	Full_Adder_behavioral sim_FA( C, S, A, B, C_in );
 
 	initial
 	begin

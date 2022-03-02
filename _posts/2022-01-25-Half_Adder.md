@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-01-25
-last_modified_at: 2022-01-31
+last_modified_at: 2022-03-02
 ---
 
 # Truth Table
@@ -42,7 +42,7 @@ C = A × B
 ## Structual modeling
 
 ```verilog
-module HA_Structual(
+module Half_Adder_Structual(
     C,
 	S,
 	A,
@@ -62,7 +62,7 @@ endmodule
 ## Dataflow modeling
 
 ```verilog
-module HA_Dataflow(
+module Half_Adder_Dataflow(
 	C,
 	S,
 	A,
@@ -82,7 +82,7 @@ endmodule
 ## Behavioral modeling
 
 ```verilog
-module HA_behavioral(
+module Half_Adder_behavioral(
 	C,
 	S,
 	A,
@@ -130,9 +130,9 @@ module Tb_HA();
 	reg A, B;
 	wire C, S;
     
-	HA_Structual sim_HA( C, S, A, B );
-//	HA_HA_Dataflow sim_HA( C, S, A, B );
-//	HA_behavioral sim_HA( C, S, A, B );
+	Half_Adder_Structual sim_HA( C, S, A, B );
+//	Half_Adder_Dataflow sim_HA( C, S, A, B );
+//	Half_Adder_behavioral sim_HA( C, S, A, B );
     
 	initial
 	begin

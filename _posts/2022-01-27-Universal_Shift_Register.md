@@ -11,11 +11,12 @@ toc: true
 toc_sticky: true
 
 date: 2022-01-27
-last_modified_at: 2022-01-27
+last_modified_at: 2022-03-02
 ---
 
 # Logic
 
+![USR](/images/2022-01-27-USR/logic.png)
 ---
 
 # Design Source

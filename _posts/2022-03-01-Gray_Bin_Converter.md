@@ -115,13 +115,11 @@ module Tb_G2B();
     parameter size = 4;
     
     reg [size-1:0]g;
-    wire [size-1:0]b0;
-    wire [size-1:0]b1;
-    wire [size-1:0]b2;
+    wire [size-1:0]b;
     
-    Gray_to_Bin_Converter_Behavioral sim_GB0(b0, g);
-    Gray_to_Bin_Converter_Dataflow sim_GB1(b1, g);
-    Gray_to_Bin_Converter_Structural sim_GB2(b2, g);
+    Gray_to_Bin_Converter_Behavioral sim_GB0(b, g);
+//    Gray_to_Bin_Converter_Dataflow sim_GB1(b, g);
+//    Gray_to_Bin_Converter_Structural sim_GB2(b, g);
     
     initial
     begin

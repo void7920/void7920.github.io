@@ -33,7 +33,7 @@ Br = A' × B
 
 # Logic
 
-// ![HS](/images/2022-02-21-HS/logic.png)
+![HS](/images/2022-02-21-HS/logic.png)
 
 ---
 
@@ -155,4 +155,4 @@ endmodule
 
 # Simulation data
 
-// ![Tb_HS](/images/2022-02-21-HS/tb.png)
+![Tb_HS](/images/2022-02-21-HS/tb.png)
