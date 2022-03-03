@@ -29,7 +29,7 @@ last_modified_at: 2022-02-21
 
 # Logic
 
-// ![DEMUX](/images/2022-02-21-DEMUX/logic.png)
+![DEMUX](/images/2022-02-21-DEMUX/logic.png)
 
 ---
 
@@ -177,6 +177,4 @@ endmodule
 
 # Simulation data
 
-// ![Tb_DEMUX](/images/2022-02-21-DEMUX/tb.png)
-
-# Simulation data
+![Tb_DEMUX](/images/2022-02-21-DEMUX/tb.png)
