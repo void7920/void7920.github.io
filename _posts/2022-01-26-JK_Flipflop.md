@@ -79,6 +79,7 @@ endmodule
 ```verilog
 module JK_FF(
 	q,
+    q_,
 	clk,
 	pre_n,
 	clr_n,
