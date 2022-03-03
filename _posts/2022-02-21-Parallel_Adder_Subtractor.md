@@ -16,7 +16,7 @@ last_modified_at: 2022-02-21
 
 # Logic
 
-// ![PAS](/images/2022-02-21-PAS/logic.png)
+![PAS](/images/2022-02-21-PAS/logic.png)
 
 ---
 
@@ -32,8 +32,8 @@ module Parallel_Adder_Subtractor #(parameter size = 4)(
     b,          // b
     );
     
-    output reg c_out;
-    output reg [size-1:0]s;
+    output c_out;
+    output [size-1:0]s;
     output ovf;
     input sel;
     input [size-1:0]a;
@@ -99,6 +99,6 @@ endmodule
 
 # Simulation data
 
-// ![Tb_PAS](/images/2022-02-21-PAS/tb.png)
+![Tb_PAS](/images/2022-02-21-PAS/tb.png)
 
 # Simulation data

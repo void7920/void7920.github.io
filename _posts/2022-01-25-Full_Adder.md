@@ -46,27 +46,27 @@ C<sub>out</sub> = A × B + C<sub>in</sub>(A ⊕ B)
 
 ```verilog
 module Full_Adder_Structural(
-	C_out,
-	S,
-	A,
-	B,
-	C_in
+	c_out,
+	s,
+	a,
+	b,
+	c_in
 	);
 
-	output C_out, 
-	output S;
-	input A; 
-	input B;
-	input C_in;
+	output c_out, 
+	output s;
+	input a; 
+	input b;
+	input c_in;
 
 	wire w1, w2, w3;
 
-	xor(w1, A, B);
-	and(w2, T1, C_in);
-	and(w3, A, B);
+	xor(w1, a, b);
+	and(w2, T1, c_in);
+	and(w3, a, b);
 	
-	xor(S, A, B, C_in);
-	or(C_out, w2, w3);	
+	xor(s, a, b, c_in);
+	or(c_out, w2, w3);	
 endmodule
 ```
 
@@ -74,21 +74,21 @@ endmodule
 
 ```verilog
 module Full_Adder_Dataflow(
-	C_out,
-	S,
-	A,
-	B,
-	C_in
+	c_out,
+	s,
+	a,
+	b,
+	c_in
 	);
 
-	output C_out, 
-	output S;
-	input A; 
-	input B;
-	input C_in;
+	output c_out; 
+	output s;
+	input a; 
+	input b;
+	input c_in;
 
-	assign S = (A ^ B ^ C_in);
-	assign C_out = (A&B) | ((A^B) & C_in);
+	assign s = (a ^ b ^ c_in);
+	assign c_out = (a&b) | ((a^b) & c_in);
 endmodule
 ```
 
@@ -96,68 +96,68 @@ endmodule
 
 ```verilog
 module Full_Adder_behavioral(
-	C_out,
-	S,
-	A,
-	B,
-	C_in
+	c_out,
+	s,
+	a,
+	b,
+	c_in
 	);
 
-	output reg C_out;
-	output reg S;
-	input A; 
-	input B;
-	input C_in;
+	output reg c_out;
+	output reg s;
+	input a; 
+	input b;
+	input c_in;
 
-	always@(A, B, C_in)
+	always@(a, b, c_in)
 	begin
-		case({C_in, B, A})
+		case({c_in, b, a})
 			3'b000:
 			begin
-				S = 1'b0;
-				C = 1'b0;
+				s = 1'b0;
+				c_out = 1'b0;
 			end
 
 			3'b001:
 			begin
-				S = 1'b1;
-				C = 1'b0;
+				s = 1'b1;
+				c_out = 1'b0;
 			end
 
 			3'b010:
 			begin
-				S = 1'b1;
-				C = 1'b0;
+				s = 1'b1;
+				c_out = 1'b0;
 			end
 
 			3'b011:
 			begin
-				S = 1'b0;
-				C = 1'b1;
+				s = 1'b0;
+				c_out = 1'b1;
 			end
 			
 			3'b100:
 			begin
-				S = 1'b1;
-				C = 1'b0;
+				s = 1'b1;
+				c_out = 1'b0;
 			end
 
 			3'b101:
 			begin
-				S = 1'b0;
-				C = 1'b1;
+				s = 1'b0;
+				c_out = 1'b1;
 			end
 
 			3'b110:
 			begin
-				S = 1'b0;
-				C = 1'b1;
+				s = 1'b0;
+				c_out = 1'b1;
 			end
 
 			3'b111:
 			begin
-				S = 1'b1;
-				C = 1'b1;
+				s = 1'b1;
+				c_out = 1'b1;
 			end
 		endcase
 	end
