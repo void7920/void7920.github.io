@@ -63,7 +63,7 @@ module Universal_Shift_Register #(parameter size=4) (
                 MUX4x1 mux(.o(muxo[v]), .sel0(sel0), .sel1(sel1), .i0(o[v]), .i1(o[v+1]), .i2(o[v-1]), .i3(i[v]));
             end
             
-            D_FF DFF(.q(o[v]), .clk(clk), .pre_n(1'b1), .clr_n(clear_n), .d(muxo[v]));
+            D_FF DFF(.q(o[v]), .q_(), .clk(clk), .pre_n(1'b1), .clr_n(clear_n), .d(muxo[v]));
         end
     endgenerate
     

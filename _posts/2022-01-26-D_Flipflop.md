@@ -71,6 +71,7 @@ endmodule
 ```verilog
 module D_FF(
 	q,
+    q_,
 	clk,
 	pre_n,
 	clr_n,
@@ -78,11 +79,14 @@ module D_FF(
 	);
 	
 	output reg q;
+    output q_;
 	input clk;
 	input pre_n;
 	input clr_n;
 	input d;
 
+    assign q_ = ~q;
+    
 	always@(posedge clk, negedge pre_n, negedge clr_n)
 	begin
 		if(pre_n == 1'b0) // !pre_n

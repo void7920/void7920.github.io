@@ -87,11 +87,14 @@ module JK_FF(
 	);
 	
 	output reg q;
+    output q_;
 	input clk;
 	input pre_n;
 	input clr_n;
 	input j;
-	input k
+	input k;
+
+    assign q_ = ~q;
 
 	always@(posedge clk, negedge pre_n, negedge clr_n)
 	begin
