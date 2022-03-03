@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-01-25
-last_modified_at: 2022-03-02
+last_modified_at: 2022-03-03
 ---
 
 # Truth Table
@@ -43,19 +43,19 @@ C = A × B
 
 ```verilog
 module Half_Adder_Structual(
-    C,
-	S,
-	A,
-	B
+    c,
+	s,
+	a,
+	b
     );
 
-	output C;
-	output S;
-	input A;
-	input B;
+	output c;
+	output s;
+	input a;
+	input b;
     
-	xor(S, A, B);
-	and(C, A, B);
+	xor(s, a, b);
+	and(c, a, b);
 endmodule
 ```
 
@@ -63,19 +63,19 @@ endmodule
 
 ```verilog
 module Half_Adder_Dataflow(
-	C,
-	S,
-	A,
-	B
+	c,
+	s,
+	a,
+	b
     );
 
-	output C;
-	output S;
-	input A;
-	input B;
+	output c;
+	output s;
+	input a;
+	input b;
 
-	assign S = A ^ B;
-	assign C = A & B;
+	assign s = a ^ b;
+	assign c = a & b;
 endmodule
 ```
 
@@ -83,42 +83,45 @@ endmodule
 
 ```verilog
 module Half_Adder_behavioral(
-	C,
-	S,
-	A,
-	B
+	c,
+	s,
+	a,
+	b
     );
 
-	output reg C;
-	output reg S;
-	input A;
-	input B;
+	output reg c;
+	output reg s;
+	input a;
+	input b;
 
+	always@(a, b)
+	begin
 	case( { b, a } )
 		2'b00 : 
 		begin
-			S = 1'b0;
-			C = 1'b0;
+			s = 1'b0;
+			c = 1'b0;
 		end
 
 		2'b01 : 
 		begin
-			S = 1'b1;
-			C = 1'b0;
+			s = 1'b1;
+			c = 1'b0;
 		end
             
-            	2'b10 :
+        2'b10 :
 		begin
-			S = 1'b1;
-			C = 1'b0;
+			s = 1'b1;
+			c = 1'b0;
 		end
             
-            	2'b11 :
+        2'b11 :
 		begin
-			S = 1'b1;
-			C = 1'b1;
+			s = 1'b1;
+			c = 1'b1;
 		end
 	endcase
+	end
 endmodule
 ```
 ---
@@ -136,8 +139,8 @@ module Tb_HA();
     
 	initial
 	begin
-		A=0;
-		B=0;
+		A = 0;
+		B = 0;
 	end
     
 	initial
