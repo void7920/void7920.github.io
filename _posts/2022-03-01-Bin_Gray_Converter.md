@@ -39,7 +39,7 @@ last_modified_at: 2022-03-01
 
 # Logic
 
-// ![B2G](/images/2022-03-01-B2G/logic.png)
+![B2G](/images/2022-03-01-B2G/logic.png)
 
 ---
 
@@ -140,4 +140,4 @@ endmodule
 
 # Simulation data
 
-// ![Tb_B2G](/images/2022-03-01-B2G/tb.png)
+![Tb_B2G](/images/2022-03-01-B2G/tb.png)
