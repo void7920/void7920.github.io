@@ -29,7 +29,7 @@ last_modified_at: 2022-02-21
 
 # Logic
 
-// ![MUX](/images/2022-02-21-MUX/logic.png)
+![MUX](/images/2022-02-21-MUX/logic.png)
 
 ---
 
@@ -166,6 +166,4 @@ endmodule
 
 # Simulation data
 
-// ![Tb_MUX](/images/2022-02-21-MUX/tb.png)
-
-# Simulation data
+![Tb_MUX](/images/2022-02-21-MUX/tb.png)
