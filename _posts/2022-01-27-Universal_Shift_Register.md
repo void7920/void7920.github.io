@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 
 date: 2022-01-27
-last_modified_at: 2022-03-03
+last_modified_at: 2022-03-04
 ---
 
 # Logic
@@ -74,34 +74,93 @@ endmodule
 # Simulation Source
 
 ```verilog
-module Tb_SISO();
-    reg clk, clr_n, i;
-    wire o;
+module Tb_USR();
+    parameter size=4;
     
-    SISO sim_SISO(.o(o), .clk(clk), .clear_n(clr_n), .i(i));
+    reg clk;
+    reg clr_n;
+    reg s0;
+    reg s1;
+    reg l;
+    reg r;
+    reg [size-1:0]in;
+    wire [size-1:0]out;
+    
+    Universal_Shift_Register #(size) sim_USR(.o(out), .clk(clk), .reset_n(clr_n), .sel0(s0), .sel1(s1), .left(l), .right(r), .i(in) );
     
     initial
     begin
+        clk = 1'b0;
         clr_n = 1'b0;
-        i = 1'b0;
-        
-        clk =1'b0;
-        forever
-            #10 clk = ~clk;
+        s0 = 1'b0;
+        s1 = 1'b0;
+        l = 1'b0;
+        r = 1'b0;
     end
     
     initial
-    begin
-        #20 i=1'b0; clr_n=1'b0;
-        #20 i=1'b1; clr_n=1'b0;
-        #20 i=1'b1; clr_n=1'b1;
-        #20 i=1'b0; clr_n=1'b1;
-        #20 i=1'b1; clr_n=1'b1;
-        #20 i=1'b0; clr_n=1'b1;
-        #20 i=1'b0; clr_n=1'b1;
-        #20 i=1'b0; clr_n=1'b1;
-        #20 i=1'b0; clr_n=1'b1;
+    begin       
+        main;
     end
+    
+    task main;
+        fork
+            clk_gen;
+            clr_n_op;
+            load_op;
+            sel0_op;
+            sel1_op;
+            lshift;
+            rshift;
+        join
+    endtask
+    
+    task clk_gen;
+        forever #10 clk = ~clk;
+    endtask
+    
+    task clr_n_op;
+        #10 clr_n = ~clr_n;
+    endtask
+    
+    task load_op;
+        begin
+            forever #40 in = $urandom%16;
+        end
+    endtask
+    
+    task sel0_op;
+        begin
+            forever #20 s0 = ~s0;
+        end
+    endtask
+    
+    task sel1_op;
+        begin
+            forever #30 s1 = ~s1;
+        end
+    endtask
+    
+    task lshift;
+        begin
+            forever
+            begin
+                #60 l = ~l;
+                #20 l = ~l;
+            end
+        end
+    endtask
+    
+    task rshift;
+        begin
+            forever
+            begin
+                #40 r = ~r;
+                #20 r = ~r;
+            end
+        end
+    endtask
+
 endmodule
 ```
 ---
