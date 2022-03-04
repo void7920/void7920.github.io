@@ -84,7 +84,7 @@ endmodule
 ![RP_BCD](/images/2022-01-31-RP_BCD/tb.png)
 
 <details>
-<summary>Neg D FF</summary>
+<summary>Neg JK FF</summary>
 <div markdown="1">
 
 Neg D FF
