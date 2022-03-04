@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "default"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "TEST"
+title                    : "Study HDL"
 title_separator          : "- - - -"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "..."
+name                     : "Verilog"
 description              : # "An amazing website."
 url                      : "https://void7920.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -104,7 +104,7 @@ analytics:
 author:
   name             : Seok Hoon Choi
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : # "I am an **amazing** person."
+  bio              : "Study Verlog HDL"
   location         : "Republic of Korea"
   email            :
   links:
