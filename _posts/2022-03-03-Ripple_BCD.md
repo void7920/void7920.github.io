@@ -81,7 +81,7 @@ endmodule
 
 # Simulation data
 
-![RP_BCD](/images/2022-01-31-RP_BCD/tb.png)
+![RP_BCD](/images/2022-03-03-RP_BCD/tb.png)
 
 <details>
 <summary>Neg JK FF</summary>
