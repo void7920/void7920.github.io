@@ -74,8 +74,9 @@ module Half_Adder_Dataflow(
 	input a;
 	input b;
 
-	assign s = a ^ b;
-	assign c = a & b;
+	assign {c, s} = a + b;
+//	assign s = a ^ b;
+//	assign c = a & b;
 endmodule
 ```
 
@@ -96,31 +97,32 @@ module Half_Adder_behavioral(
 
 	always@(a, b)
 	begin
-	case( { b, a } )
-		2'b00 : 
-		begin
-			s = 1'b0;
-			c = 1'b0;
-		end
-
-		2'b01 : 
-		begin
-			s = 1'b1;
-			c = 1'b0;
-		end
-            
-        2'b10 :
-		begin
-			s = 1'b1;
-			c = 1'b0;
-		end
-            
-        2'b11 :
-		begin
-			s = 1'b1;
-			c = 1'b1;
-		end
-	endcase
+		{c, s} = a + b;
+//		case( { b, a } )
+//			2'b00 : 
+//			begin
+//				s = 1'b0;
+//				c = 1'b0;
+//			end
+//
+//			2'b01 : 
+//			begin
+//				s = 1'b1;
+//				c = 1'b0;
+//			end
+//
+//		    2'b10 :
+//			begin
+//				s = 1'b1;
+//				c = 1'b0;
+//			end
+//
+//		    2'b11 :
+//			begin
+//				s = 1'b1;
+//				c = 1'b1;
+//			end
+		endcase
 	end
 endmodule
 ```
