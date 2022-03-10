@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-01-25
-last_modified_at: 2022-03-03
+last_modified_at: 2022-03-10
 ---
 
 # Truth Table
