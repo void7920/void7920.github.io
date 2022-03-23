@@ -104,7 +104,7 @@ analytics:
 author:
   name             : Seok Hoon Choi
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Study Verlog HDL"
+  bio              : "Study Verilog HDL"
   location         : "Republic of Korea"
   email            :
   links:
