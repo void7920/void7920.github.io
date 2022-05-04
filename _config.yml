@@ -71,7 +71,7 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification : "2xGe6qZjEcimN1MLNxO1i8q_Cu_ETNzVVNMISWShxrY"
+google_site_verification : "googleed7199d1a438ac09"
 bing_site_verification   :
 naver_site_verification  :
 yandex_site_verification :
@@ -104,7 +104,7 @@ analytics:
 author:
   name             : Seok Hoon Choi
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Study Verlog HDL"
+  bio              : "Study Verilog HDL"
   location         : "Republic of Korea"
   email            :
   links:
