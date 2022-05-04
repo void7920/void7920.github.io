@@ -87,10 +87,10 @@ module Full_Adder_Dataflow(
 	input b;
 	input c_in;
 
-	assign {c_out, s} = a + b + c_in;
+	assign s = (a ^ b ^ c_in);
+	assign c_out = (a&b) | ((a^b) & c_in);
 
-//	assign s = (a ^ b ^ c_in);
-//	assign c_out = (a&b) | ((a^b) & c_in);
+//	assign {c_out, s} = a + b + c_in;
 endmodule
 ```
 
@@ -113,56 +113,56 @@ module Full_Adder_behavioral(
 
 	always@(a, b, c_in)
 	begin
-		{c_out, s}  = a + b + c_in;
-//		case({c_in, b, a})
-//			3'b000:
-//			begin
-//				s = 1'b0;
-//				c_out = 1'b0;
-//			end
-//
-//			3'b001:
-//			begin
-//				s = 1'b1;
-//				c_out = 1'b0;
-//			end
-//
-//			3'b010:
-//			begin
-//				s = 1'b1;
-//				c_out = 1'b0;
-//			end
-//
-//			3'b011:
-//			begin
-//				s = 1'b0;
-//				c_out = 1'b1;
-//			end
-//			
-//			3'b100:
-//			begin
-//				s = 1'b1;
-//				c_out = 1'b0;
-//			end
-//
-//			3'b101:
-//			begin
-//				s = 1'b0;
-//				c_out = 1'b1;
-//			end
-//
-//			3'b110:
-//			begin
-//				s = 1'b0;
-//				c_out = 1'b1;
-//			end
-//
-//			3'b111:
-//			begin
-//				s = 1'b1;
-//				c_out = 1'b1;
-//			end
-//		endcase
+//		{c_out, s}  = a + b + c_in;
+		case({c_in, b, a})
+			3'b000:
+			begin
+				s = 1'b0;
+				c_out = 1'b0;
+			end
+
+			3'b001:
+			begin
+				s = 1'b1;
+				c_out = 1'b0;
+			end
+
+			3'b010:
+			begin
+				s = 1'b1;
+				c_out = 1'b0;
+			end
+
+			3'b011:
+			begin
+				s = 1'b0;
+				c_out = 1'b1;
+			end
+			
+			3'b100:
+			begin
+				s = 1'b1;
+				c_out = 1'b0;
+			end
+
+			3'b101:
+			begin
+				s = 1'b0;
+				c_out = 1'b1;
+			end
+
+			3'b110:
+			begin
+				s = 1'b0;
+				c_out = 1'b1;
+			end
+
+			3'b111:
+			begin
+				s = 1'b1;
+				c_out = 1'b1;
+			end
+		endcase
 	end
 endmodule
 ```
