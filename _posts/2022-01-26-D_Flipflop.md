@@ -45,7 +45,7 @@ D FF master-slave
 ## Dataflow modeling
 
 ```verilog
-module D_FF_(
+module D_LATCH(
     q,
     q_,
     clk,
@@ -122,7 +122,7 @@ module D_FF_MS(
     
     wire DQ, DQ_;
     
-    D_FF_ Master(.q(DQ), .q_(DQ_), .clk(clk), .pre_n(pre_n), .clr_n(clr_n), .d(d));
+    D_LATCH Master(.q(DQ), .q_(DQ_), .clk(clk), .pre_n(pre_n), .clr_n(clr_n), .d(d));
     SR_Latch Slave(.q(q), .q_(q_), .en(~(clk&clk)), .s(DQ), .r(DQ_));
 endmodule
 ```
