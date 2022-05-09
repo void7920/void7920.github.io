@@ -34,11 +34,11 @@ Q<sub>n+1</sub> = D
 ---
 
 # Logic
-D FF
-![DFF1](/images/2022-01-26-D_FLIPFLOP/logic.png)
+D Latch
+![DLatch](/images/2022-01-26-D_FLIPFLOP/logic.png)
 
 D FF master-slave
-![DFF2](/images/2022-01-26-D_FLIPFLOP/logic2.png)
+![DFF](/images/2022-01-26-D_FLIPFLOP/logic2.png)
 
 ---
 
