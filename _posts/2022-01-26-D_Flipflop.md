@@ -70,20 +70,20 @@ endmodule
 
 ```verilog
 module D_FF(
-	q,
+    q,
     q_,
-	clk,
-	pre_n,
-	clr_n,
-	d
-	);
+    clk,
+    pre_n,
+    clr_n,
+    d
+    );
 	
-	output reg q;
+    output reg q;
     output q_;
-	input clk;
-	input pre_n;
-	input clr_n;
-	input d;
+    input clk;
+    input pre_n;
+    input clr_n;
+    input d;
 
     assign q_ = ~q;
     
