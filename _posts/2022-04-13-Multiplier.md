@@ -32,7 +32,7 @@ last_modified_at: 2022-04-13
 ## Dataflow Modeling
 
 ```verilog
-module Multiplier #(parameter msb = 8)(
+module Multiplier #(parameter msb = 4)(
   y,
   a,
   b
@@ -50,7 +50,17 @@ endmodule
 ## Modular Modeling
 
 ```verilog
-module Multiplier 
+module Multiplier #(parameter msb = 4)(
+	output [msb*2-1:0]y;
+	input [msb-1:0]a, b;
+	);
+
+	reg [msb-1:0] ram [msb-1:0];
+
+	integer i, j;
+	
+		
+endmodule
 ```
 ---
 
@@ -78,7 +88,7 @@ module Half_Adder_Dataflow(
 	s,
 	a,
 	b
-  );
+  	);
 
 	output c;
 	output s;
