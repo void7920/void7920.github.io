@@ -67,7 +67,7 @@ module cla_nbit#(parameter msb = 4)(
     s,          // sum
     ci,         // carry in
     a,          // a
-    b,          // b
+    b           // b
     );
     
     output co;
