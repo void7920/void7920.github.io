@@ -27,9 +27,9 @@ module Parallel_Adder_Subtractor #(parameter size = 4)(
     c_out,      // carry out
     s,          // sum
     ovf,        // overflow
-    sel,         // mode 0 = add / 1 = sub
+    sel,        // mode 0 = add / 1 = sub
     a,          // a
-    b,          // b
+    b           // b
     );
     
     output c_out;
