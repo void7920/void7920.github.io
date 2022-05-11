@@ -61,6 +61,9 @@ endmodule
 
 CLA is Carry Lookahead Adder
 
+recommend using maximum size 4 bit at CLA
+
+
 ```verilog
 module cla_nbit#(parameter msb = 4)(
     co,         // carry out
