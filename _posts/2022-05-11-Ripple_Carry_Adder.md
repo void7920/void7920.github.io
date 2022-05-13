@@ -160,14 +160,14 @@ module Tb_RCA();
     
     initial
     begin
-        #50  in0[size-1:0]=16; in1[size-1:0]=$random%(2**size);
-        #50  in0[size-1:0]=15; in1[size-1:0]=$random%(2**size);
-        #50  in0[size-1:0]=3; in1[size-1:0]=$random%(2**size);
-        #50  in0[size-1:0]=12; in1[size-1:0]=$random%(2**size);
-        #50  in0[size-1:0]=10; in1[size-1:0]=$random%(2**size);
-        #50  in0[size-1:0]=9; in1[size-1:0]=$random%(2**size);
-        #50  in0[size-1:0]=8;  in1[size-1:0]=$random%(2**size); 
-        #50  in0[size-1:0]=13; in1[size-1:0]=$random%(2**size);
+        #50  in0[size-1:0]=$random%(2**size); in1[size-1:0]=$random%(2**size);
+        #50  in0[size-1:0]=$random%(2**size); in1[size-1:0]=$random%(2**size);
+        #50  in0[size-1:0]=$random%(2**size); in1[size-1:0]=$random%(2**size);
+        #50  in0[size-1:0]=$random%(2**size); in1[size-1:0]=$random%(2**size);
+        #50  in0[size-1:0]=$random%(2**size); in1[size-1:0]=$random%(2**size);
+        #50  in0[size-1:0]=$random%(2**size); in1[size-1:0]=$random%(2**size);
+        #50  in0[size-1:0]=$random%(2**size);  in1[size-1:0]=$random%(2**size); 
+        #50  in0[size-1:0]=$random%(2**size); in1[size-1:0]=$random%(2**size);
     end
 endmodule
 ```

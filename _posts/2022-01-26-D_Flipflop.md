@@ -1,5 +1,5 @@
 ---
-title:  "D Flip-Flop / Latch"
+title:  "D Flip-Flop"
 excerpt: "Sequential Logic D Flip-Flop"
 
 categories:
@@ -34,10 +34,9 @@ Q<sub>n+1</sub> = D
 ---
 
 # Logic
-D Latch
-![DLatch](/images/2022-01-26-D_FLIPFLOP/logic.png)
 
 D FF master-slave
+
 ![DFF](/images/2022-01-26-D_FLIPFLOP/logic2.png)
 
 ---
